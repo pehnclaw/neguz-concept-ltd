@@ -191,10 +191,10 @@ button {
 }
 
 .brand-logo img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(197, 168, 128, 0.3);
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 12px rgba(197, 168, 128, 0.25);
   object-fit: cover;
 }
 
