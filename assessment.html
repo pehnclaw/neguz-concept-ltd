@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Interactive Project Assessment | NEGUZ CONCEPT LTD Abuja</title>
+  <meta name="description" content="Complete our 4-step spatial assessment to receive a customized architectural quote and instant WhatsApp consultation for your Abuja property.">
+  <meta name="keywords" content="Cost of screeding and home cinema setup Nigeria, POP ceiling cost calculator Abuja, Maitama interior quote, Gwarinpa TV console price">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- JavaScript (Deferred) -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <img src="logo.png" alt="NEGUZ CONCEPT LTD Corporate Monogram Seal">
+        <div class="brand-text">
+          <span class="brand-name">NEGUZ CONCEPT</span>
+          <span class="brand-sub">Interior Architecture</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop">
+        <ul class="nav-links">
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="assessment.html" class="nav-link active" style="color: var(--color-gold);">Project Assessment</a></li>
+          <li><a href="blog.html" class="nav-link">Abuja Insights</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Mode Theme">
+          <span class="theme-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-text">Dark Luxury</span>
+        </button>
+
+        <a href="assessment.html" class="btn btn-primary btn-nav-cta">Start Consult</a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Mobile Menu">
+          <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-links">
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+          <li><a href="assessment.html" class="mobile-nav-link">Project Assessment</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Abuja Insights</a></li>
+        </ul>
+        <div class="mobile-drawer-actions">
+          <button class="theme-toggle-btn mobile-drawer-theme-btn" id="mobileThemeToggleBtn" aria-label="Toggle Mode Theme Mobile">
+            <span class="theme-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+            <span class="theme-text-mobile">Switch Theme</span>
+          </button>
+          <a href="assessment.html" class="btn btn-primary mobile-drawer-consult-btn">Start Consult</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       ASSESSMENT HERO BANNER
+       ========================================== -->
+  <section class="page-hero">
+    <div class="container text-center">
+      <div class="badge">Instant Qualification</div>
+      <h1 class="page-title">Interactive Project <span class="text-gradient">Assessment.</span></h1>
+      <p class="page-subtitle">Complete these 4 brief steps to receive a customized architectural scope and instant priority WhatsApp routing with our lead engineers.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ASSESSMENT WIZARD CARD SECTION
+       ========================================== -->
+  <section class="section-padding lead-section">
+    <div class="container">
+      <div class="lead-card-box">
+        <div class="wizard-header">
+          <div class="badge">Step-by-Step Blueprint</div>
+          <h3>Qualify Your Spatial Requirements</h3>
+          <p style="color: var(--text-secondary);">Your inputs directly format a pre-filled architectural brief sent straight to our WhatsApp consultation desk.</p>
+        </div>
+
+        <div class="wizard-progress">
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="wizard-step-content active" data-step="1">
+          <div class="step-question">Step 1: What is your primary space typology?</div>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="space" value="Living Room Suite"> Living Room Suite
+            </label>
+            <label class="option-card">
+              <input type="radio" name="space" value="Executive Master Bedroom"> Executive Master Bedroom
+            </label>
+            <label class="option-card">
+              <input type="radio" name="space" value="Private Home Cinema"> Private Home Cinema
+            </label>
+            <label class="option-card">
+              <input type="radio" name="space" value="Corporate Office Suite"> Corporate Office Suite
+            </label>
+            <label class="option-card">
+              <input type="radio" name="space" value="Full Luxury Duplex"> Full Luxury Duplex
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="wizard-step-content" data-step="2">
+          <div class="step-question">Step 2: What fit-out requirements do you need?</div>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="checkbox" value="POP Ceiling & Screeding"> POP Ceiling & Screeding
+            </label>
+            <label class="option-card">
+              <input type="checkbox" value="Wall Paneling & TV Console"> Wall Paneling & TV Console
+            </label>
+            <label class="option-card">
+              <input type="checkbox" value="Soundproofing & Cinema Treatment"> Soundproofing & Cinema
+            </label>
+            <label class="option-card">
+              <input type="checkbox" value="Smart Ambient Lighting"> Smart Ambient Lighting
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="wizard-step-content" data-step="3">
+          <div class="step-question">Step 3: Where is your property located?</div>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="location" value="Maitama"> Maitama
+            </label>
+            <label class="option-card">
+              <input type="radio" name="location" value="Asokoro"> Asokoro
+            </label>
+            <label class="option-card">
+              <input type="radio" name="location" value="Wuse II"> Wuse II
+            </label>
+            <label class="option-card">
+              <input type="radio" name="location" value="Gwarinpa"> Gwarinpa
+            </label>
+            <label class="option-card">
+              <input type="radio" name="location" value="Life Camp"> Life Camp
+            </label>
+            <label class="option-card">
+              <input type="radio" name="location" value="Other Abuja Location"> Other Abuja Area
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="wizard-step-content" data-step="4">
+          <div class="step-question">Step 4: What is the current phase of your space?</div>
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="phase" value="Shell / Lintel Level"> Shell / Lintel Level
+            </label>
+            <label class="option-card">
+              <input type="radio" name="phase" value="Plastered Blockwork"> Plastered Blockwork
+            </label>
+            <label class="option-card">
+              <input type="radio" name="phase" value="Renovation of Existing Finished Space"> Renovation / Upgrade
+            </label>
+          </div>
+        </div>
+
+        <div class="wizard-controls">
+          <button id="wizardPrevBtn" class="btn btn-secondary" style="visibility: hidden;">Previous</button>
+          <button id="wizardNextBtn" class="btn btn-primary">Next Step</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="logo.png" alt="NEGUZ CONCEPT LTD Logo">
+            <div class="brand-text">
+              <span class="brand-name">NEGUZ CONCEPT</span>
+              <span class="brand-sub">Interior Architecture</span>
+            </div>
+          </a>
+          <p>NEGUZ CONCEPT LTD is an RC-certified high-end interior architecture and spatial fit-out studio operating out of Abuja, Nigeria.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pillars</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#pop-service">POP Ceiling Engineering</a></li>
+            <li><a href="services.html#console-service">Fluted Wall Paneling</a></li>
+            <li><a href="services.html#console-service">Floating TV Consoles</a></li>
+            <li><a href="services.html#cinema-service">Private Home Cinemas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Showroom</a></li>
+            <li><a href="services.html">Bespoke Services</a></li>
+            <li><a href="portfolio.html">Case Studies Portfolio</a></li>
+            <li><a href="assessment.html">Project Assessment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & HQ</h4>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/2348115251461">Direct WhatsApp API</a></li>
+            <li><a href="#">Abuja HQ (Dutse Alhaji / Bwari Axis)</a></li>
+            <li><a href="#">Corporate Billing Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEGUZ CONCEPT LTD. All rights reserved. Registered Entity in Nigeria.</div>
+        <div>Designed & Engineered for High-End Spatial Fit-Outs.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
