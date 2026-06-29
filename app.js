@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSplitSliders();
   initLeadWizard();
   initWhatsAppDirectLinks();
+  initPortfolioFilters();
 });
 
 /* --------------------------------------------------------------------------
@@ -81,10 +82,11 @@ function initMobileMenu() {
   mobileLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const targetId = link.getAttribute('href');
-      if (targetId && targetId.startsWith('#') && targetId.length > 1) {
-        e.preventDefault();
-        const targetEl = document.querySelector(targetId);
+      if (targetId && targetId.includes('#') && targetId.split('#')[1].length > 0) {
+        const hash = '#' + targetId.split('#')[1];
+        const targetEl = document.querySelector(hash);
         if (targetEl) {
+          e.preventDefault();
           drawer.classList.remove('open');
           mobileBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
           targetEl.scrollIntoView({ behavior: 'smooth' });
@@ -118,12 +120,10 @@ function initSplitSliders() {
       handle.style.left = `${percentage}%`;
     };
 
-    // Mouse Events
     handle.addEventListener('mousedown', () => { isDragging = true; });
     window.addEventListener('mouseup', () => { isDragging = false; });
     window.addEventListener('mousemove', (e) => onMove(e.clientX));
 
-    // Touch Events
     handle.addEventListener('touchstart', () => { isDragging = true; }, { passive: true });
     window.addEventListener('touchend', () => { isDragging = false; });
     window.addEventListener('touchmove', (e) => {
@@ -135,7 +135,34 @@ function initSplitSliders() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Interactive Lead Qualification Wizard Logic
+   4. Portfolio Gallery Filtering Logic
+   -------------------------------------------------------------------------- */
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-item-card');
+
+  if (filterBtns.length === 0 || portfolioCards.length === 0) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.dataset.filter;
+
+      portfolioCards.forEach(card => {
+        if (filterValue === 'all' || card.dataset.category === filterValue) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Lead Qualification Wizard Logic
    -------------------------------------------------------------------------- */
 function initLeadWizard() {
   let currentStep = 1;
@@ -154,7 +181,6 @@ function initLeadWizard() {
 
   if (!nextBtn) return;
 
-  // Option selection handlers
   document.querySelectorAll('.option-card').forEach(card => {
     card.addEventListener('click', (e) => {
       const input = card.querySelector('input');
@@ -235,7 +261,7 @@ function submitLeadToWhatsApp(data) {
 }
 
 /* --------------------------------------------------------------------------
-   5. Direct Service WhatsApp Routing Matrix
+   6. Direct Service WhatsApp Routing Matrix
    -------------------------------------------------------------------------- */
 function initWhatsAppDirectLinks() {
   const phone = '2348115251461';
